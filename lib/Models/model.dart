@@ -4,12 +4,12 @@
 
 import 'dart:convert';
 
-Welcome welcomeFromJson(String str) => Welcome.fromJson(json.decode(str));
+Weather welcomeFromJson(String str) => Weather.fromJson(json.decode(str));
 
-String welcomeToJson(Welcome data) => json.encode(data.toJson());
+String welcomeToJson(Weather data) => json.encode(data.toJson());
 
-class Welcome {
-    Welcome({
+class Weather {
+    Weather({
         required this.location,
          required this.current,
     });
@@ -17,7 +17,7 @@ class Welcome {
     Location location;
     Current current;
 
-    factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
+    factory Weather.fromJson(Map<String, dynamic> json) => Weather(
         location: Location.fromJson(json["location"]),
         current: Current.fromJson(json["current"]),
     );

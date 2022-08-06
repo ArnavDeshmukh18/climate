@@ -15,7 +15,7 @@ class DataService {
     var responce = await http.get(url);
     if (responce.statusCode == 200) {
       var json = jsonDecode(responce.body);
-      return Welcome.fromJson(json);
+      return Weather.fromJson(json);
     }
   }
 }
